@@ -1,0 +1,835 @@
+/*---------------------------------------Global--------------------------------------------------*/
+:root {
+  --animate-duration: 1s;
+  --animate-delay: 1.9s;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+    transition: 1.5ms;
+}
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font: 15px/1.5 Arial, Helvetica,sans-serif;
+}
+/*-- Inspiration taken from abdo steif -->
+/* --> https://codepen.io/abdosteif/pen/bRoyMb?editors=1100*/
+
+
+
+
+h2, h3,  strong{
+    color: #0575e6;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 500;
+    text-align: center;
+}
+
+h1{
+    color: #0575e6;
+    font-weight: 500;
+    font-family: 'Press Start 2P', cursive;
+    text-decoration: underline #ffca2b;
+    text-align: center;
+}
+
+
+header{
+  background:linear-gradient(to left, #0575e6, #021b79);
+  border-bottom:#ec660d 5px solid;
+}
+header a{
+  color:#ffffff;
+  text-decoration:none;
+  text-transform: uppercase;
+  font:20px 'Lato', sans-serif;
+}
+
+
+header a:hover{
+    color:#ec660d;
+    font-weight:bold;
+    text-decoration: none;
+}
+
+.btn.btn-md {
+    padding: 10px 25px !important;
+}
+.btn-primary {
+    font:14px 'Montserrat Alternates', sans-serif;
+    color:#ffffff;;
+    background: #ffca2b !important;
+    color: rgb(0, 0, 0) !important;
+    border: 2px solid #da1212 !important;
+    border-radius: 0px !important;
+    margin-top: 15px;
+    margin-bottom:15px;
+}
+.btn-primary:hover{
+    color:#ec660d;
+    font-weight:bold;
+}
+
+.my-element {
+  --animate-duration: 2s;
+}
+
+
+/*-------------------------------------End of Global--------------------------------------------------*/
+
+
+/* Navbar section */
+
+.nav {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    line-height: 65px;
+    top:0;
+    z-index: 1;
+}
+
+.nav div.logo img{
+    width: 25%;
+    height: auto;
+    margin-left: 10px;
+}
+
+
+.nav div.main_list {
+    margin-top:30px;
+
+}
+
+.nav div.main_list ul {
+    height: 65px;
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.nav div.main_list ul li {
+    width: auto;
+    height: 65px;
+    padding: 0;
+    padding-right: 1.4rem;
+}
+
+.nav div.main_list ul li a {
+    text-decoration: none;
+    color: #fff;
+    line-height: 65px;
+    font-size: 2rem;
+}
+
+.nav div.main_list ul li a:hover {
+    color: #ffca2b;
+}
+
+
+.navTrigger {
+    display: none;
+}
+
+.nav {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+
+}
+
+
+/* Animation */
+/* Inspiration taken from Dicson https://codemyui.com/simple-hamburger-menu-x-mark-animation/ */
+
+.navTrigger {
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    margin: auto;
+    position: absolute;
+    right: 30px;
+    top: 0;
+    bottom: 0;
+}
+
+.navTrigger i {
+    background-color: #ffca2b;
+    border-radius: 2px;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+}
+
+.navTrigger i:nth-child(1) {
+    -webkit-animation: outT 0.8s backwards;
+    animation: outT 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger i:nth-child(2) {
+    margin: 5px 0;
+    -webkit-animation: outM 0.8s backwards;
+    animation: outM 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger i:nth-child(3) {
+    -webkit-animation: outBtm 0.8s backwards;
+    animation: outBtm 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger.active i:nth-child(1) {
+    -webkit-animation: inT 0.8s forwards;
+    animation: inT 0.8s forwards;
+}
+
+.navTrigger.active i:nth-child(2) {
+    -webkit-animation: inM 0.8s forwards;
+    animation: inM 0.8s forwards;
+}
+
+.navTrigger.active i:nth-child(3) {
+    -webkit-animation: inBtm 0.8s forwards;
+    animation: inBtm 0.8s forwards;
+}
+
+@-webkit-keyframes inM {
+    50% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(45deg);
+    }
+}
+
+@keyframes inM {
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+@-webkit-keyframes outM {
+    50% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(45deg);
+    }
+}
+
+@keyframes outM {
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+@-webkit-keyframes inT {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@keyframes inT {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@-webkit-keyframes outT {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@keyframes outT {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@-webkit-keyframes inBtm {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+@keyframes inBtm {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+@-webkit-keyframes outBtm {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+@keyframes outBtm {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+.affix {
+    padding: 5px;
+    background: linear-gradient(to right, #43c6ac, #191654);
+    height: auto;
+
+}
+
+
+/***************************************************************Home section***********************************************************************************/
+
+.home {
+    width: 100%;
+    height: 75vh;
+    background-image: url(../img/eat-sleep-code-repeat.jpg);
+    background-position: center top;
+    background-size:cover;
+}
+
+.home h1{
+    font-size: 5rem;
+    line-height: 5.5rem;
+    text-decoration: none;
+    letter-spacing: 0.8rem;
+    margin-bottom: 20px;
+    background: linear-gradient(#ffca2b, rgba(216, 8, 8, 0));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+            background-clip: text;
+}
+
+.home p{
+    font-family: 'Montserrat Alternates', sans-serif;
+    max-width: 30rem;
+    font-size: 2.5rem;
+    line-height: 3rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/************************************************************************************Intro***********************************************************************/
+.intro{
+    background: linear-gradient(to right, #000000, #434343); 
+    padding-top:50px;
+    padding-bottom:50px;
+}
+.intro h2{
+    font-size: 40px;
+    margin:0;
+    padding: 10px;
+    margin: 10px;
+}
+
+.intro p{
+    font: 25px 'Montserrat Alternates', sans-serif;
+    line-height: 3rem;
+    color: #ffffff;
+    margin-top: 20px !important;
+    padding:10px 20px 0px 20px;
+    margin:0;
+}
+
+
+/********************************Free Time*******************************************************************/
+.free{
+     background: linear-gradient(to right, #e0eafc, #cfdef3);
+     border-top: solid 3px  #0575e6;
+     border-bottom: solid 3px  #0575e6;
+     padding-top:50px;
+    padding-bottom:50px;
+}
+.free h1{
+    font-size: 35px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.free h3{
+    font-size: 30px;
+    color: #000000;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.free img{
+    border: 5px solid #ffca2b;
+}
+/********************************Programs*******************************************************************/
+.program{
+    background: linear-gradient(to right, #000000, #434343);
+    padding-top:40px;
+    padding-bottom:40px;
+} 
+
+.program h2{
+    font-size: 35px;
+}
+
+.program p{
+     font: 25px 'Montserrat Alternates', sans-serif;
+     line-height: 2.5rem;
+     color: #ffffff;
+}
+
+.program .col-lg-6{
+    padding-top:20px;
+    padding-bottom:20px;
+}
+
+.skill-bars{
+  padding: 20px 30px 20px 30px;
+  width: 100%;
+  height: auto;
+  background:linear-gradient(to right, #0575e6, #021b79);
+  box-shadow: 5px 5px 20px rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+.skill-bars .bar{
+  margin: 20px 0;
+  padding: 10px;
+}
+.skill-bars .bar:first-child{
+  margin-top: 0px;
+}
+.skill-bars .bar .info{
+  margin-bottom: 5px;
+}
+.skill-bars .bar .info span{
+  font-weight: 500;
+  font-size: 20px;
+  color: #fff;
+  opacity: 0;
+  animation: showText 0.5s 1s linear forwards;
+}
+@keyframes showText {
+  100%{
+    opacity: 1;
+  }
+}
+.skill-bars .bar .progress-line{
+  height: 10px;
+  width: 100%;
+  background: #f0f0f0;
+  position: relative;
+  transform: scaleX(0);
+  transform-origin: left;
+  border-radius: 10px;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.05),
+              0 1px rgba(255,255,255,0.8);
+  animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
+}
+@keyframes animate {
+  100%{
+    transform: scaleX(1);
+  }
+}
+.bar .progress-line span{
+  height: 100%;
+  position: absolute;
+  border-radius: 10px;
+  transform: scaleX(0);
+  transform-origin: left;
+  background: #0575e6;
+  animation: animate 1s 1s cubic-bezier(1,0,0.5,1) forwards;
+}
+.bar .progress-line.html span{
+  width: 75%;
+}
+.bar .progress-line.css span{
+  width: 60%;
+}
+.bar .progress-line.js span{
+  width: 30%;
+}
+.bar .progress-line.php span{
+  width: 5%;
+}
+.bar .progress-line.react span{
+  width: 0%;
+}
+.progress-line span::before{
+  position: absolute;
+  content: "";
+  top: -10px;
+  right: 0;
+  height: 0;
+  width: 0;
+  border: 7px solid transparent;
+  border-bottom-width: 0px;
+  border-right-width: 0px;
+  border-top-color: #000;
+  opacity: 0;
+  animation: showText2 0.5s 1.5s linear forwards;
+}
+.progress-line span::after{
+  position: absolute;
+  top: -28px;
+  right: 0;
+  font-weight: 500;
+  background: #000;
+  color: #fff;
+  padding: 1px 8px;
+  font-size: 12px;
+  border-radius: 3px;
+  opacity: 0;
+  animation: showText2 0.5s 1.5s linear forwards;
+}
+@keyframes showText2 {
+  100%{
+    opacity: 1;
+  }
+}
+.progress-line.html span::after{
+  content: "75%";
+}
+.progress-line.css span::after{
+  content: "60%";
+}
+.progress-line.js span::after{
+  content: "30%";
+}
+.progress-line.php span::after{
+  content: "5%";
+}
+.progress-line.react span::after{
+  content: "0%";
+}
+
+
+/**********************************************************Project***********************************************************/
+.project{
+     background: linear-gradient(to right, #e0eafc, #cfdef3);
+     border-top: solid 3px  #0575e6;
+     padding-top:40px;
+    padding-bottom:40px;
+}
+}
+.project h1{
+    font-size: 45px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.project h3{
+    font-size: 35px;
+    margin-top: 15px;
+    text-align: center;
+}
+.project p{
+    font: 22px 'Montserrat Alternates', sans-serif;
+    line-height: 2.5rem;
+    color: white ;
+    margin-top: 10px;
+    text-align:justify;
+    padding:10px 20px 0px 20px;
+    margin:0;
+}
+
+.project-bars{
+  padding: 10px 20px;
+  width: 100%;
+  height: auto;
+  background: black;
+  box-shadow: 5px 5px 20px rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+.project .col-lg-4{
+    padding-top:20px;
+    padding-bottom:20px;
+}
+
+.project img{
+    width: 100%;
+}
+
+
+/**Contact Form**/
+
+footer h1{
+    color:#ffffff;
+    font-size: 30px;
+    text-decoration:none;
+}
+
+#fh5co-main {
+    
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+}
+#fh5co-main .fh5co-narrow-content {
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+    padding: 4em 0;
+}
+.form-control{
+       -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-shadow: none;
+    background: transparent;
+    border: 2px solid rgba(0, 0, 0, 0.1) !important;
+    height: 54px !important;
+    font-size: 18px;
+    font-weight: 300;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    border-radius: 0px !important;
+}
+#message {
+    height: 130px !important;
+}
+
+footer .btn-primary{
+    margin: 0;
+}
+/**End of Contact Form**/
+
+/*This is in the footer content*/
+footer{
+  text-align: center;
+  background: linear-gradient(to right, #43c6ac, #191654);
+  border-top:#ec660d 5px solid;
+  margin: none;
+  padding: none;
+}
+
+footer h2{
+    font-size: 35px;
+    color:#ffffff;
+}
+
+footer p{
+    font: 25px 'Montserrat Alternates', sans-serif;
+    color:#ffffff;
+    padding-bottom: 10px;
+}
+
+footer a{
+    text-decoration:none;
+    color:black;
+}
+
+.btn.btn-md{
+    place-items: center;
+}
+/**This is for icons on the footer**/
+:root {
+  --messenger-blue: #0084ff;
+  --fb-blue: #3b5998;
+  --wa-green: #25d366;
+  --instagram: radial-gradient(circle at 30% 107%, #fdf497 0%,  #fd1d1d 1%, #fdf497 5%, #fd5949 35%,#d6249f 62%,#285AEB 90%);
+}
+
+#icon i {
+  font-size: 3rem;
+  margin: 1rem;
+  transition: all 150ms ease-in-out;
+  filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.5));
+  text-decoration:none;
+}
+
+#icon i:hover {
+  transform: scale(1.2);
+  transform: translate(-1px, -1px);
+    animation: glitch 200ms infinite;
+  -webkit-animation: glitch 300ms infinite;
+  color: #ffc000;
+  text-decoration:none;
+}
+
+@keyframes glitch {
+    0% { text-shadow: -3px 2px #E73C7E, -2px -4px #2CABFF, -1px -1px black, 3px 5px rgb(0, 0, 0);}
+    35% { text-shadow: -2px -4px #E73C7E, 2px 1x #2CABFF, -1px -1px black, 3px 5x 5px rgb(0, 0, 0); }
+  40% { text-shadow: 2px -1px #E73C7E, -4px 1px #2CABFF, -1px -1px black, 3px 5px 5px rgb(0, 0, 0);}
+  75% { text-shadow: -3px -1px #E73C7E, -2px -2px #2CABFF, -1px -1px black, 3px 5px 5px rgb(0, 0, 0);}
+    100% { text-shadow: -2px -1px #E73C7E, 2px -1px #2CABFF, -1px -1px black, 3px 5px 5px rgb(0, 0, 0);}
+}
+
+
+
+/********************************************************************Media qurey section*************************************************************************/
+
+
+@media screen and (max-width:1050px) {
+
+    .container-fluid{
+        margin: 0;
+    }
+
+    .navTrigger {
+        display: block;
+        margin-top: 60px;
+    }
+    .nav div.logo img{
+    width: 25%;
+    margin: 0;
+    padding: 0;
+}
+    .nav div.main_list {
+        width: 100%;
+        height: 0;
+        margin: 0;
+        overflow: hidden;
+    }
+    .nav div.show_list {
+        height: auto;
+        display: none;
+    }
+    .nav div.main_list ul {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        padding: 0;
+        background-color: transparent;
+        /*same background color of navbar*/
+        background-position: center top;
+    }
+    .nav div.main_list ul li {
+        width: 100%;
+        text-align: center;
+    }
+    .nav div.main_list ul li a {
+        text-align: center;
+        width: 100%;
+        font-size: 3rem;
+        padding: 5px;
+    }
+    .nav div.media_button {
+        display: block;
+    }
+}
+
+
+@media(max-width:770px){
+
+/************HOME****************************/
+    
+    .home {
+      height: 75vh;
+      padding: 0;
+      place-items: center;
+    }
+    .home h1 {
+      font-size: 2.5rem;
+      line-height: 5.5rem;
+      letter-spacing: 0.1rem;
+      color: #ffca2b;
+    }
+    .home p{
+        font-size: 2rem;
+
+    }
+
+    .intro p{
+        padding:0;
+    }
+
+    .skills p{
+        padding: 0;
+        margin: 0;
+    }
+
+/************Free, Programs, Projects****************************/
+    .program img{
+    margin-bottom: 20px;
+    }
+
+    .free h1 {
+      font-size: 2rem;
+  }
+
+  .program h1 {
+      font-size: 2rem;
+  }
+  .project h1 {
+      font-size: 2rem;
+  }
+/******************FOOTER**********************/
+   footer h1{
+    font-size: 2rem;
+    }
+
+}
+
+
+@media(max-width: 500px){
+    .navTrigger {
+        display: block;
+        margin-top: 40px;
+    }
+}
+
